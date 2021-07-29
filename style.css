@@ -1,0 +1,15 @@
+.my-cont-2 {
+  border: 1px solid lightseagreen;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  margin-bottom: 50px;
+}
+#my-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
