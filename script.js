@@ -56,7 +56,7 @@ ans - In innerHTML, you can use html elements like <b><div> etc.
 
 ans - Array.from(Element)
 
-3- LOCAL STORAGE : While working with local Storage, always pull save the data in the local storage first and then manipulate it accordingly!
+3- LOCAL STORAGE : While working with local Storage, always save the data in the local storage first and then manipulate it accordingly!
 
 
 
@@ -69,6 +69,8 @@ let myPara = document.querySelector(".my-para");
 let mainCont = document.querySelector(".my-cont-2");
 let search = document.querySelector("#search1");
 let txtArea = document.getElementById("my-txt-area");
+let titleArea = document.getElementById("title-txt-area");
+
 showNotes();
 
 firstBtn.addEventListener("click", function (e) {
@@ -86,11 +88,14 @@ firstBtn.addEventListener("click", function (e) {
   addedNote.classList.add("my-cont-2");
   showNotes();
   txtArea.value = "";
+  titleArea.value = "";
 });
 
 //Showing Notes
 
 function showNotes() {
+  let value = titleArea.value;
+  console.log(value);
   let notes = localStorage.getItem("notes");
   if (notes === null) {
     notesArr = [];
@@ -102,9 +107,9 @@ function showNotes() {
   notesArr.forEach((element, index) => {
     html += `<div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Note ${index + 1}</h5>
+    <h5 class="card-title">${value}</h5>
     <p class="card-text">${element}</p>
-    <button id = "${index}" onclick = "deleteNote(this.id)"  class="btn btn-primary">Delete Note</button>
+    <button id = "${index}" onclick = "deleteNote(this.id)"class="btn btn-primary">Delete Note</button>  
   </div>
 </div>`;
   });
